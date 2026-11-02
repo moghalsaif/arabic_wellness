@@ -1,0 +1,8 @@
+.git/
+.next/
+node_modules/
+mockups/
+public/resources/
+.codex/
+tmp/
+.env*
