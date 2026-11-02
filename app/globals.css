@@ -807,6 +807,58 @@ button { color: inherit; font: inherit; }
   .programme-glass h3 { font-size: 34px; }
   .research-carousel-controls { gap: 12px; }
 }
+/* Academia: a light editorial composition, with the learning scene as its focus. */
+.academy-section { padding-block: clamp(72px,7vw,112px); background: #f0eee5; color: var(--forest-deep); }
+.academy-intro { display: grid; grid-template-columns: 1.1fr 1fr; align-items: end; gap: 64px; margin-bottom: 44px; }
+.academy-eyebrow { font-size: 17px; font-weight: 600; color: #6f684c; margin: 0 0 18px; }
+.academy-intro h2 { max-width: 560px; margin: 0; font-family: var(--display); font-size: clamp(48px,5vw,70px); font-weight: 500; line-height: 1.03; letter-spacing: -.025em; text-wrap: balance; }
+.academy-intro-copy > p { margin: 0 0 20px; max-width: 520px; font-size: 18px; line-height: 1.8; color: #526354; }
+.academy-contact { display: inline-flex; align-items: center; gap: 18px; min-height: 44px; font-size: 17px; font-weight: 600; }
+.academy-content { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: stretch; }
+.academy-photo { position: relative; display: flex; align-items: end; min-height: 430px; border-radius: 20px; overflow: hidden; background: #d6dcce; isolation: isolate; }
+.academy-photo img { z-index: -2; object-fit: cover; object-position: center; transition: transform .55s var(--ease-refined); }
+.academy-photo::after { content: ""; position: absolute; inset: 35% 0 0; z-index: -1; background: linear-gradient(transparent, #102218b8); pointer-events: none; }
+.academy-photo-caption { padding: 30px; width: 100%; color: #fffdf8; }
+.academy-photo-caption h3 { margin: 0 0 14px; font-family: var(--display); font-size: 38px; font-weight: 500; line-height: 1.15; }
+.academy-photo-caption > span { display: flex; justify-content: space-between; gap: 24px; font-size: 17px; font-weight: 500; line-height: 1.5; }
+.academy-curriculum { min-width: 0; padding-block: 8px 0; display: flex; flex-direction: column; }
+.academy-curriculum > h3 { font-family: var(--display); font-size: 34px; font-weight: 500; line-height: 1.2; margin: 0 0 24px; }
+.academy-workshops { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 28px; list-style: none; margin: 0; padding: 0; }
+.academy-workshops li { min-height: 76px; display: flex; align-items: start; gap: 12px; padding-block: 18px; border-top: 1px solid #cbd2c2; font-size: 17px; line-height: 1.5; }
+.academy-number { flex-shrink: 0; font-size: 16px; color: #817447; padding-top: 1px; font-variant-numeric: tabular-nums; }
+.academy-all { display: flex; align-items: center; justify-content: space-between; min-height: 52px; gap: 20px; margin-top: auto; padding-top: 20px; font-size: 17px; font-weight: 600; border-top: 1px solid #a4b09c; }
+.academy-section svg { flex-shrink: 0; transition: transform .25s var(--ease-refined); }
+[dir="rtl"] .academy-intro h2, [dir="rtl"] .academy-photo-caption h3, [dir="rtl"] .academy-curriculum > h3 { font-family: var(--arabic); letter-spacing: 0; line-height: 1.4; }
+[dir="rtl"] .academy-intro h2 { font-size: clamp(40px,4.5vw,60px); }
+[dir="rtl"] .academy-photo-caption h3 { font-size: 32px; }
+[dir="rtl"] .academy-curriculum > h3 { font-size: 29px; }
+[dir="rtl"] .academy-section svg { transform: scaleX(-1); }
+@media (hover: hover) and (pointer: fine) {
+  .academy-photo:hover img { transform: scale(1.025); }
+  .academy-section a:hover svg { transform: translate(2px,-2px); }
+  [dir="rtl"] .academy-section a:hover svg { transform: translate(-2px,-2px) scaleX(-1); }
+}
+@media (max-width: 1000px) {
+  .academy-intro { gap: 32px; }
+  .academy-content { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .academy-workshops { gap: 0 20px; }
+}
+@media (max-width: 800px) {
+  .academy-intro, .academy-content { grid-template-columns: minmax(0,1fr); gap: 28px; }
+  .academy-intro { margin-bottom: 32px; }
+  .academy-intro-copy > p { max-width: 640px; }
+  .academy-photo { min-height: 0; aspect-ratio: 4 / 3; }
+  .academy-photo-caption { padding: 24px; }
+  .academy-photo-caption h3 { font-size: 34px; }
+  .academy-curriculum { padding-top: 8px; }
+  .academy-workshops li { min-height: 78px; }
+  .academy-all { margin-top: 12px; }
+}
+@media (max-width: 380px) {
+  .academy-workshops { grid-template-columns: minmax(0,1fr); }
+  .academy-workshops li { min-height: 58px; padding-block: 15px; }
+  .academy-photo { aspect-ratio: 1 / 1; }
+}
 /* Restrained interaction polish: no scroll hijacking or perpetual card motion. */
 .contact-links bdi { display: inline-block; direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
 .stat-grid strong, .chart-value > span { direction: ltr; unicode-bidi: isolate; }

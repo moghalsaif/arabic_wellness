@@ -55,6 +55,10 @@ Shared prompt: photorealistic-natural editorial photography for a refined UAE lo
   - Revised asset: `public/images/research-gender-uae-v2.webp`, edited with built-in ImageGen. Prompt: Remove only the man's white ghutra and black agal, replacing them with natural short dark hair appropriate to his casual exercise outfit; preserve his face, beard, pose, clothing, the woman and her hijab, Dubai park, skyline, lighting and composition. Used for the Male vs Female Health card/article and the shared Weight Loss Challenge image.
 - ageing: An older Emirati Arab couple in their late sixties walking together in a beautiful shaded UAE garden. Man in white kandura and ghutra, woman in elegant neutral abaya and headscarf, naturally aged faces and grey beard, warm candid expressions, active independent daily life.
 
+## Academia workshop illustration
+
+`public/images/academia-workshop-uae.webp` was generated with the built-in ImageGen tool for the homepage Academia section. Fictional participants, not actual staff or an actual company workshop. Final prompt: photorealistic editorial lifestyle-medicine workshop in a sunlit Dubai education room with limestone, light oak and sage/ivory details; an Arab female health educator in a cream blazer and beige hijab teaching three Arab adult professionals, including a man in a complete white Emirati kandura and ghutra; natural discussion around an oak table with notebooks and fresh produce; realistic faces and hands; landscape 4:3 framing, no text, logos or watermarks.
+
 ## Chart provenance
 
 `lib/research-data.ts` transcribes selected percentages from the five supplied research reports. It preserves period/group labels, includes worsening measures, distinguishes cumulative populations from matched follow-up, and does not claim causality. Charts use a common 0–100% scale and accessible tables. The age report's stated total and sex subtotals differ; the chart note discloses this source inconsistency.

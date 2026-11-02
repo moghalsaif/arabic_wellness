@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, GraduationCap, Microscope } from "lucide-react";
+import { ArrowUpRight, Microscope } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "./Footer";
@@ -10,6 +10,7 @@ import { useLocale } from "./LocaleProvider";
 import { leaders } from "@/lib/page-data";
 import { ResearchCarousel } from "./ResearchCarousel";
 import { ProgrammeShowcase } from "./ProgrammeShowcase";
+import { AcademiaSection } from "./AcademiaSection";
 
 const content = {
   en: {
@@ -120,7 +121,7 @@ export function HomePage() {
     <ProgrammeShowcase heading={c.programmesTitle} programmes={c.programmes} />
     <section className="section evidence"><div className="page-shell evidence-grid"><div><h2>{c.evidenceTitle}</h2><p>{c.evidenceIntro}</p></div><div className="stat-grid">{c.stats.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div></div></section>
     <section className="section research" id="research"><div className="page-shell"><SectionIntro icon={<Microscope />} title={isArabic ? "معرفة تقود العمل." : "Insight that moves us forward."} body={c.researchIntro} /><ResearchCarousel items={c.research} /></div></section>
-    <section className="section academia" id="academia"><div className="page-shell academia-grid"><div className="academia-copy"><GraduationCap size={42} /><h2>{isArabic ? "المعرفة. ثم الممارسة." : "Knowledge. Put into practice."}</h2><p>{c.academiaIntro}</p><Link className="academia-page-link" href="/academia/lifestyle-medicine">{isArabic ? "استكشف برامج طب نمط الحياة" : "Explore Lifestyle Medicine programmes"}<ArrowUpRight size={20} /></Link><a className="button button--gold" href="mailto:info@arabianlife.org">{isArabic ? "ناقش برنامجاً" : "Discuss a programme"}<ArrowUpRight size={20} /></a></div><div className="workshops"><h3>{c.workshopsTitle}</h3>{c.workshops.map((item, index) => <div key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></div>)}<Link className="workshops-page-link" href="/academia/health-workshops">{isArabic ? "استكشف جميع الورش الـ13" : "Explore all 13 workshops"}<ArrowUpRight size={20} /></Link></div></div></section>
+    <AcademiaSection intro={c.academiaIntro} workshops={c.workshops} />
     <section className="section contact" id="contact"><div className="page-shell contact-inner"><div><h2>{c.contactTitle}</h2><p>{c.contactBody}</p></div><div className="contact-links"><a href="tel:+971585908468"><bdi dir="ltr">+971 58 590 8468</bdi></a><a href="mailto:info@arabianlife.org"><bdi dir="ltr">info@arabianlife.org</bdi></a><p>{isArabic ? "1603، برج داماك للأعمال، الخليج التجاري، دبي، الإمارات" : "1603, Damac Business Tower, Business Bay, Dubai, UAE"}</p></div></div></section>
     <Footer />
   </main>;
