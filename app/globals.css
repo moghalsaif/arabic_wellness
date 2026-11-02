@@ -14,6 +14,7 @@
   --display: "Cormorant Garamond", Georgia, serif;
   --sans: "Manrope", Arial, sans-serif;
   --arabic: "Tajawal", Arial, sans-serif;
+  --ease-refined: cubic-bezier(.22,1,.36,1);
 }
 
 * { box-sizing: border-box; }
@@ -805,6 +806,34 @@ button { color: inherit; font: inherit; }
   .programme-glass { padding: 22px 20px; }
   .programme-glass h3 { font-size: 34px; }
   .research-carousel-controls { gap: 12px; }
+}
+/* Restrained interaction polish: no scroll hijacking or perpetual card motion. */
+.contact-links bdi { display: inline-block; direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
+.stat-grid strong, .chart-value > span { direction: ltr; unicode-bidi: isolate; }
+.hero__copy { animation-duration: .7s; }
+@keyframes menuReveal { from { opacity: 0; transform: translate3d(0,-6px,0); } to { opacity: 1; transform: translate3d(0,0,0); } }
+.language-options, .nav-group[open] > .nav-dropdown { animation: menuReveal .2s var(--ease-refined) both; }
+.language-button svg, .nav-group summary > svg, .nav-subgroup summary > svg { transition: transform .22s var(--ease-refined); flex-shrink: 0; }
+.language-button[aria-expanded="true"] > svg { transform: rotate(180deg); }
+.mobile-nav { transition: grid-template-rows .3s var(--ease-refined); }
+.button, .partner-logo, .leader.leader-photo-card, .research-photo-card { transition-timing-function: var(--ease-refined); }
+.leader-photo img, .research-photo img, .model-feature-image img, .programme-scene-image { transition: transform .55s var(--ease-refined); }
+.button svg, .card-link svg { flex-shrink: 0; transition: transform .25s var(--ease-refined); }
+.socials a, .research-carousel-controls button, .language-options button { transition: background-color .18s var(--ease-refined), border-color .18s var(--ease-refined); }
+.socials a:hover { background: #ffffff12; border-color: #e6c98e99; }
+.language-button, .menu-button { transition: background-color .18s var(--ease-refined); }
+.language-button:hover, .menu-button:hover { background: rgba(255,253,248,.85); }
+:where(a,button,summary):focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+[dir="rtl"] .card-link svg { transform: scaleX(-1); }
+@media (hover: hover) and (pointer: fine) {
+  .leader-photo-card:hover { transform: translateY(-3px); }
+  .leader-photo-card:hover .leader-photo img, .research-photo-card:hover img { transform: scale(1.025); }
+  .card-link:hover svg, .research-photo-card:hover .card-link svg, .leader-photo-card:hover .card-link svg { transform: translate(2px,-2px); }
+  [dir="rtl"] .card-link:hover svg, [dir="rtl"] .research-photo-card:hover .card-link svg, [dir="rtl"] .leader-photo-card:hover .card-link svg { transform: translate(-2px,-2px) scaleX(-1); }
+}
+@media (hover: none) {
+  .button:hover, .leader-photo-card:hover, .partner-logo:hover { transform: none; }
+  .leader-photo-card:hover .leader-photo img, .research-photo-card:hover img, .model-feature-card:hover .model-feature-image img, .programme-scene:hover .programme-scene-image { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

@@ -11,6 +11,8 @@ export function ResearchCarousel({ items }: { items: string[][] }) {
   const { isArabic } = useLocale();
   const rail = useRef<HTMLDivElement>(null);
   const interacting = useRef(false);
+  const manualUntil = useRef(0);
+  const pauseForInteraction = () => { manualUntil.current = Date.now() + 12000; };
   const move = useCallback((direction: number) => {
     const el = rail.current;
     if (!el) return;
@@ -24,11 +26,11 @@ export function ResearchCarousel({ items }: { items: string[][] }) {
     let visible = false;
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }, { threshold: .6 });
     observer.observe(el);
-    const timer = setInterval(() => { if (visible && !interacting.current && !document.hidden) move(1); }, 6500);
+    const timer = setInterval(() => { if (visible && !interacting.current && !document.hidden && Date.now() > manualUntil.current) move(1); }, 6500);
     return () => { observer.disconnect(); clearInterval(timer); };
   }, [move]);
   const facts = isArabic ? ["أكثر من 100,000 فحص", "116,731 مشاركاً", "40,000 طفل · 100,000 بالغ", "31,979 رجلاً · 15,776 امرأة", "ثلاث فئات عمرية"] : ["100,000+ screenings", "116,731 people assessed", "40,000 children · 100,000 adults", "31,979 men · 15,776 women", "Three age groups compared"];
-  return <div className="research-carousel" role="region" aria-label={isArabic ? "دراسات وأبحاث" : "Research studies"} aria-roledescription="carousel" onMouseEnter={() => { interacting.current = true; }} onMouseLeave={() => { interacting.current = false; }} onFocusCapture={() => { interacting.current = true; }} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) interacting.current = false; }}>
+  return <div className="research-carousel" role="region" aria-label={isArabic ? "دراسات وأبحاث" : "Research studies"} aria-roledescription="carousel" onPointerDown={pauseForInteraction} onWheel={pauseForInteraction} onKeyDown={pauseForInteraction} onMouseEnter={() => { interacting.current = true; }} onMouseLeave={() => { interacting.current = false; }} onFocusCapture={() => { interacting.current = true; }} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) interacting.current = false; }}>
     <div className="research-carousel-controls"><p>{isArabic ? "استكشف الدراسات والنتائج" : "Explore the studies and their findings"}</p><div>
       <button type="button" onClick={() => move(-1)} aria-label={isArabic ? "الدراسة السابقة" : "Previous study"}><ArrowLeft size={20} /></button>
       <button type="button" onClick={() => move(1)} aria-label={isArabic ? "الدراسة التالية" : "Next study"}><ArrowRight size={20} /></button>

@@ -12,6 +12,7 @@ export function ArticleIndex({ items, isArabic, researcher = false }: { items: I
   useEffect(() => {
     let frame = 0;
     let disposed = false;
+    let previousSection = "";
     const sections = items.map(item => ({ id: item.id, node: document.getElementById(item.id) })).filter(item => item.node);
     const update = () => {
       frame = 0;
@@ -30,9 +31,10 @@ export function ArticleIndex({ items, isArabic, researcher = false }: { items: I
         }
         // Keep the active entry inside a long index without moving the document.
         const top = link.offsetTop;
-        if (top < nav.scrollTop || top + link.offsetHeight > nav.scrollTop + nav.clientHeight) {
+        if (current !== previousSection && (top < nav.scrollTop || top + link.offsetHeight > nav.scrollTop + nav.clientHeight)) {
           nav.scrollTo({ top: Math.max(0, top - nav.clientHeight / 2), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
         }
+        previousSection = current;
       }
     };
     const schedule = () => { if (!frame && !disposed) frame = requestAnimationFrame(update); };
