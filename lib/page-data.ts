@@ -1,7 +1,7 @@
 export const leaders = [
   { slug: "raza-siddiqui", image: "/images/raza-siddiqui.png", name: { en: "Dr Raza Siddiqui", ar: "الدكتور رضا صديقي" }, role: { en: "Chairman", ar: "رئيس مجلس الإدارة" }, source: "https://ihwcouncil.org/dr-raza-siddiqui/" },
   { slug: "aftab-hasan", image: "/images/aftab-hasan.webp", name: { en: "Dr Aftab Hasan", ar: "الدكتور أفتاب حسن" }, role: { en: "Vice Chairman", ar: "نائب رئيس مجلس الإدارة" }, source: "https://www.gaip.co/team" },
-  { slug: "adrian-kennedy", image: "/images/adrian-kennedy.png", name: { en: "Prof Adrian Kennedy", ar: "البروفيسور أدريان كينيدي" }, role: { en: "Chief Executive Officer", ar: "الرئيس التنفيذي" }, source: "https://www.activelifehra.com/p1.pdf" },
+  { slug: "adrian-kennedy", image: "/images/adrian-kennedy-profile.png", name: { en: "Prof Adrian Kennedy", ar: "البروفيسور أدريان كينيدي" }, role: { en: "Chief Executive Officer", ar: "الرئيس التنفيذي" }, source: "https://www.activelifehra.com/p1.pdf" },
 ];
 
 export const studies = [
