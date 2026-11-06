@@ -12,7 +12,7 @@ export function Hero() {
       <div className="hero__veil" />
       <div className="hero__content page-shell">
         <div className="hero__copy">
-          <h1>{isArabic ? "إرثٌ صحي، مستلهمٌ من رؤية" : "A Legacy of Health, Inspired by Vision."}</h1>
+          <h1>{isArabic ? "إرثٌ صحي، مستلهمٌ من رؤية مشتركة" : "A Legacy of Health, Inspired by a shared Vision."}</h1>
           <p>{isArabic ? "حياة أطول تبدأ بصحة أفضل اليوم." : "Longer lives begin with better health today."}</p>
           <a className="button button--gold" href="#vision">{isArabic ? "اكتشف رؤيتنا" : "Explore our vision"}<ArrowDown size={19} aria-hidden="true" /></a>
         </div>

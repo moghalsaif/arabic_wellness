@@ -6,7 +6,7 @@ export const leaders = [
 
 export const studies = [
   { slug: "uae-industrial-health", image: "/images/research-industrial-uae.webp", title: { en: "10-year UAE Industrial Health Study", ar: "دراسة صحة القطاع الصناعي في الإمارات لمدة 10 سنوات" }, category: { en: "Workplace health", ar: "الصحة في بيئة العمل" } },
-  { slug: "urban-lifestyle", image: "/images/research-urban-uae.webp", title: { en: "10-year Urban Lifestyle Study", ar: "دراسة نمط الحياة الحضري لمدة 10 سنوات" }, category: { en: "Population health", ar: "صحة السكان" } },
+  { slug: "urban-lifestyle", image: "/images/research-urban-uae.webp", title: { en: "10-year Urban Health & Lifestyle Study", ar: "دراسة الصحة ونمط الحياة الحضري لمدة 10 سنوات" }, category: { en: "Population health", ar: "صحة السكان" } },
   { slug: "child-vs-adult", image: "/images/research-child-uae.webp", title: { en: "Child vs Adult Health", ar: "صحة الطفل مقارنة بالبالغ" }, category: { en: "Life stages", ar: "مراحل الحياة" } },
   { slug: "male-vs-female", image: "/images/research-gender-uae-v2.webp", title: { en: "Male vs Female Health", ar: "صحة الرجل مقارنة بالمرأة" }, category: { en: "Lifestyle & longevity", ar: "نمط الحياة وطول العمر" } },
   { slug: "ageing-and-health", image: "/images/research-ageing-uae.webp", title: { en: "Ageing & Health", ar: "التقدم في العمر والصحة" }, category: { en: "Healthy ageing", ar: "التقدم الصحي في العمر" } },
@@ -26,7 +26,7 @@ export const leaderBiographies = {
     ],
     [
       ["A career in lifestyle medicine", "Professor Adrian Kennedy brings a 50-year career in Lifestyle Medicine and Corporate Health. His work spans health and lifestyle research, counselling, health management, disease management, corporate wellness, health insurance and professional education.", "His operational experience includes infrastructure design, process improvement, organisational change and coordination across large health programmes."],
-      ["Assessment at scale", "He was a founder member of the Institute of Lifestyle Medicine at Harvard, USA, and serves as an ambassador for India and the UAE for the European Society of Lifestyle Medicine, as described in the supplied leadership profile.", "He holds a patent and copyright for the Computerized Health Scan, recognised with the World Health Award 2000 by the Government of Dubai. Lifestyle Assessment Software was implemented across more than 50 hospitals, covering more than 100,000 clients annually."],
+      ["Assessment at scale", "He was a founder member of the Institute of Lifestyle Medicine at Harvard, USA, and serves as an ambassador for India and the UAE for the European Society of Lifestyle Medicine.", "He holds a patent and copyright for the Computerized Health Scan, recognised with the World Health Award 2000 by the Government of Dubai. Lifestyle Assessment Software was implemented across more than 50 hospitals, covering more than 100,000 clients annually."],
       ["Research and education", "In 2008, the Health Scan was used to audit the health status of more than 500 corporate organisations in India, contributing to the CII Corporate Wellness Awards. His research also includes long-term corporate health work in the UAE.", "He is the author of eight books used in postgraduate Lifestyle Management education. His career includes work with Arabian Wellness & Lifestyle Management, Lifetime Wellness Rx International and Tata Steel, Jamshedpur."],
     ],
   ],
@@ -43,7 +43,7 @@ export const leaderBiographies = {
     ],
     [
       ["مسيرة في طب نمط الحياة", "يمتلك البروفيسور أدريان كينيدي مسيرة تمتد لخمسين عاماً في طب نمط الحياة والصحة المؤسسية. يشمل عمله البحوث والإرشاد وإدارة الصحة والأمراض والعافية المؤسسية والتأمين الصحي والتعليم المهني.", "تشمل خبرته التشغيلية تصميم البنية الأساسية وتحسين العمليات والتغيير المؤسسي وتنسيق البرامج الصحية واسعة النطاق."],
-      ["التقييم الصحي واسع النطاق", "كان عضواً مؤسساً لمعهد طب نمط الحياة في هارفارد بالولايات المتحدة، ويعمل سفيراً للهند والإمارات لدى الجمعية الأوروبية لطب نمط الحياة، وفق الملف القيادي المقدم.", "يحمل براءة اختراع وحقوق نشر للمسح الصحي المحوسب الذي حصل على جائزة الصحة العالمية عام 2000 من حكومة دبي. وطُبقت برمجيات تقييم نمط الحياة في أكثر من 50 مستشفى، لتغطي أكثر من 100,000 عميل سنوياً."],
+      ["التقييم الصحي واسع النطاق", "كان عضواً مؤسساً في معهد طب نمط الحياة في هارفارد بالولايات المتحدة، ويعمل سفيراً للجمعية الأوروبية لطب نمط الحياة في الهند والإمارات.", "يحمل براءة اختراع وحقوق نشر للمسح الصحي المحوسب الذي حصل على جائزة الصحة العالمية عام 2000 من حكومة دبي. وطُبقت برمجيات تقييم نمط الحياة في أكثر من 50 مستشفى، لتغطي أكثر من 100,000 عميل سنوياً."],
       ["البحث والتعليم", "في عام 2008، استُخدم المسح الصحي لتقييم الحالة الصحية لأكثر من 500 مؤسسة في الهند والمساهمة في جوائز العافية المؤسسية لاتحاد الصناعات الهندية. ويشمل عمله دراسات طويلة المدى في الإمارات.", "وهو مؤلف ثمانية كتب مستخدمة في تعليم إدارة نمط الحياة للدراسات العليا. وتشمل مسيرته العمل مع أرابيان ويلنس ولايف تايم ويلنس وتاتا ستيل في جامشيدبور."],
     ],
   ],

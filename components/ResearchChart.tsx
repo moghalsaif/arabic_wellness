@@ -4,7 +4,6 @@ export function ResearchChart({ index, locale }: { index: number; locale: "en" |
   const data = researchData[index];
   const ar = locale === "ar";
   return <section className="research-chart" id="study-data" aria-labelledby="study-data-heading">
-    <p className="chart-eyebrow">{ar ? "من التقرير الأصلي" : "From the source report"}</p>
     <h2 id="study-data-heading">{ar ? "النتائج بالأرقام" : "The findings, in figures"}</h2>
     <p>{ar ? "نسبة المشاركين المسجلين لكل مؤشر (%)" : "Participants recorded against each measure (%)"}</p>
     <div className="chart-legend">{data.groups[locale].map((label, i) => <span key={label}><i className={`series-${i}`} />{label}</span>)}</div>
