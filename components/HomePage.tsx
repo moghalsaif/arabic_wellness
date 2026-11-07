@@ -3,7 +3,6 @@
 import { ArrowUpRight, Microscope } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { BrandMark } from "./Brand";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { Hero } from "./Hero";
@@ -107,7 +106,7 @@ const content = {
 export function HomePage() {
   const { locale, isArabic } = useLocale();
   const c = content[locale];
-  const associates = [{ name: "GAIP – InsureTek", url: "https://www.gaip.co", logo: "/images/gaip-logo.webp", className: "partner-logo--gaip" }, { name: "Active Life", url: "https://www.activelifehra.com", logo: "/images/active-life-logo.png", className: "partner-logo--active" }, { name: "Arabian Life", url: "/", logo: "/images/arabian-life-logo-reference.png", className: "partner-logo--arabian" }];
+  const associates = [{ name: "GAIP – InsureTek", url: "https://www.gaip.co", logo: "/images/gaip-logo.webp", className: "partner-logo--gaip" }, { name: "Active Life", url: "https://www.activelifehra.com", logo: "/images/active-life-logo.png", className: "partner-logo--active" }];
 
   return <main>
     <Header />
@@ -117,7 +116,7 @@ export function HomePage() {
       <div className="vision-copy"><h2>{c.visionTitle}</h2><blockquote>“{c.visionQuote}”</blockquote><p>{c.visionBody}</p><p className="vision-law">{c.visionLaw}</p><p className="vision-note">{c.visionNote}</p></div>
     </div></section>
     <section className="section leadership" id="who-we-are"><div className="page-shell"><SectionIntro title={isArabic ? "خبرة تقود رؤيتنا" : "Experience behind our vision."} body={c.leadershipIntro} /><div className="leader-list">{c.leaders.map(([name, role, bio], index) => <Link href={`/leadership/${leaders[index].slug}`} className="leader leader-photo-card" key={name}><div className="leader-photo"><Image src={leaders[index].image} alt={name} fill sizes="(max-width: 780px) 92vw, 31vw" /></div><div className="leader-card-copy"><p className="leader-role">{role}</p><h3>{name}</h3><p>{bio}</p><span className="card-link">{isArabic ? "الملف القيادي" : "View leadership profile"}<ArrowUpRight size={21} /></span></div></Link>)}</div></div></section>
-    <section className="section associates" id="partners"><div className="page-shell partner-section"><h2>{isArabic ? "منظومة مترابطة من الشركاء" : "A connected ecosystem of partners."}</h2><p>{c.associatesIntro}</p><div className="partner-logos">{associates.map((partner) => <a key={partner.name} href={partner.url} target="_blank" rel="noreferrer" className={`partner-logo ${partner.className}`} aria-label={`${partner.name} — ${isArabic ? "زيارة الموقع" : "Visit website"}`}>{partner.url === "/" ? <BrandMark /> : <Image src={partner.logo} alt={partner.name} width={300} height={120} />}<ArrowUpRight size={20} aria-hidden="true" /></a>)}</div></div></section>
+    <section className="section associates" id="partners"><div className="page-shell partner-section"><h2>{isArabic ? "منظومة مترابطة من الشركاء" : "A connected ecosystem of partners."}</h2><p>{c.associatesIntro}</p><div className="partner-logos">{associates.map((partner) => <a key={partner.name} href={partner.url} target="_blank" rel="noreferrer" className={`partner-logo ${partner.className}`} aria-label={`${partner.name} — ${isArabic ? "زيارة الموقع" : "Visit website"}`}><Image src={partner.logo} alt={partner.name} width={300} height={120} /><ArrowUpRight size={20} aria-hidden="true" /></a>)}</div></div></section>
     <section className="section model" id="model"><div className="page-shell"><SectionIntro title={c.modelTitle} body={c.modelIntro} light /><Link className="model-feature-card" href="/longevity-model" aria-label={isArabic ? "اقرأ المقال الكامل عن نموذج أرابيان لايف هيلث تك" : "Read the full Arabian Life HealthTech model article"}><div className="model-feature-image"><Image src="/images/research-industrial-uae.webp" alt={isArabic ? "صورة توضيحية لأخصائية صحية ومشارك عربي في بيئة عمل إماراتية" : "Illustrative scene of an Arab health professional and participant in a UAE workplace"} fill sizes="(max-width: 780px) 92vw, 800px" /></div><div className="model-feature-caption"><span>{isArabic ? "نموذج أرابيان لايف هيلث تك" : "The Arabian Life HealthTech model"}</span><ArrowUpRight size={21} aria-hidden="true" /></div></Link></div></section>
     <ProgrammeShowcase heading={c.programmesTitle} programmes={c.programmes} />
     <section className="section evidence"><div className="page-shell evidence-grid"><div><h2>{c.evidenceTitle}</h2><p>{c.evidenceIntro}</p></div><div className="stat-grid">{c.stats.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div></div></section>
